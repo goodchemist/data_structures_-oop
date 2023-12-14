@@ -18,6 +18,9 @@ class Stack:
         """Конструктор класса Stack"""
         self.top = None
 
+    def __str__(self):
+        return f'Это экземпляр класса {self.__class__.__name__}.'
+
     def push(self, data):
         """
         Метод для добавления элемента на вершину стека

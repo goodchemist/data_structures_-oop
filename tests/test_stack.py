@@ -5,6 +5,12 @@ from src.stack import Stack
 class TestStack(unittest.TestCase):
     stack = Stack()
 
+    def test_str(self):
+        """
+        Проверяет работу метода __str__
+        """
+        self.assertEqual(str(self.stack), "Это экземпляр класса Stack.")
+
     def test_push(self):
         """
         Проверка функции push() из класса Stack
@@ -24,3 +30,4 @@ class TestStack(unittest.TestCase):
         self.stack.push('test1')
         self.assertEqual(self.stack.pop(), 'test1')
         self.assertEqual(self.stack.pop(), None)
+
