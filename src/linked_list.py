@@ -1,3 +1,6 @@
+import ast
+
+
 class Node:
     """Класс для узла односвязного списка"""
 
@@ -72,3 +75,21 @@ class LinkedList:
         sorted_list = sorted(self.all, key=lambda x: x['id'])
 
         return sorted_list
+
+    def get_data_by_id(self, key_):
+        """
+        Возвращает первый найденный в `LinkedList` словарь с ключом 'id',
+        значение которого равно переданному в метод значению.
+        :return: словарь с ключом 'key_'
+        """
+        for item in self.all:
+
+            try:
+
+                if item['id'] == key_:
+                    result_str = str(item)
+                    result_dict = ast.literal_eval(result_str)
+                    return result_dict
+
+            except TypeError:
+                print('Данные не являются словарем или в словаре нет id.')
