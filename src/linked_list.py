@@ -10,6 +10,19 @@ class Node:
         self.data = data
         self.next_node = next_node
 
+    def __str__(self):
+        """
+        Вывод данных в строковом представлении.
+        :return:
+        """
+        return f'{self.data}'
+
+    def __getitem__(self, item):
+        """
+        Получение значения по ключу item.
+        """
+        return self.data[item]
+
 
 class LinkedList:
     """Класс для односвязного списка"""
@@ -50,3 +63,12 @@ class LinkedList:
 
         ll_string += 'None'
         return ll_string
+
+    def to_list(self):
+        """
+        Возвращает список с данными, содержащимися в односвязном списке `LinkedList`.
+        :return: список с данными
+        """
+        sorted_list = sorted(self.all, key=lambda x: x['id'])
+
+        return sorted_list
