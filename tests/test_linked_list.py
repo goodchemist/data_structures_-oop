@@ -42,3 +42,20 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(str(result[1]), "{'id': 1, 'username': 'lazzy508509'}")
         self.assertEqual(str(result[2]), "{'id': 2, 'username': 'mik.roz'}")
         self.assertEqual(str(result[3]), "{'id': 3, 'username': 'mosh_s'}")
+
+    def test_get_data_by_id(self):
+        """
+        Проверяет работу методa get_data_by_id.
+        """
+        self.ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+        self.ll.insert_at_end({'id': 3, 'username': 'mosh_s'})
+
+        self.assertEqual(self.ll.get_data_by_id(3), {'id': 3, 'username': 'mosh_s'})
+
+    def test_typeerror_get_data_by_id(self):
+        """
+        Проверяет работу исключений в методе get_data_by_id.
+        """
+        self.ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+        self.ll.insert_at_end([1, 2, 3])
+        self.assertRaises(TypeError, self.ll.get_data_by_id(2))
