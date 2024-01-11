@@ -26,3 +26,19 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(self.ll.head.data, {'id': 0})
         self.assertEqual(self.ll.head.next_node.data, {'id': 1})
         self.assertEqual(self.ll.tail, None)
+
+    def test_to_list(self):
+        """
+        Проверяет работу методa to_list.
+        """
+        self.ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+        self.ll.insert_at_end({'id': 2, 'username': 'mik.roz'})
+        self.ll.insert_at_end({'id': 3, 'username': 'mosh_s'})
+        self.ll.insert_beginning({'id': 0, 'username': 'serebro'})
+
+        result = self.ll.to_list()
+
+        self.assertEqual(str(result[0]), "{'id': 0, 'username': 'serebro'}")
+        self.assertEqual(str(result[1]), "{'id': 1, 'username': 'lazzy508509'}")
+        self.assertEqual(str(result[2]), "{'id': 2, 'username': 'mik.roz'}")
+        self.assertEqual(str(result[3]), "{'id': 3, 'username': 'mosh_s'}")
