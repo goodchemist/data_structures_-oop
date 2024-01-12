@@ -2,11 +2,11 @@ import ast
 
 
 class Node:
-    """Класс для узла односвязного списка"""
+    """Класс для узла односвязного списка."""
 
     def __init__(self, data, next_node=None):
         """
-        Конструктор класса Node
+        Конструктор класса Node.
 
         :param data: данные, которые будут храниться в узле
         """
@@ -16,7 +16,8 @@ class Node:
     def __str__(self):
         """
         Вывод данных в строковом представлении.
-        :return:
+
+        :return: f-строка
         """
         return f'{self.data}'
 
@@ -28,7 +29,7 @@ class Node:
 
 
 class LinkedList:
-    """Класс для односвязного списка"""
+    """Класс для односвязного списка."""
 
     def __init__(self):
         self.head = None
@@ -36,7 +37,8 @@ class LinkedList:
         self.all = []
 
     def insert_beginning(self, data_: dict) -> None:
-        """Принимает данные (словарь) и добавляет узел с этими данными в начало связанного списка"""
+        """Принимает данные (словарь) и добавляет узел с этими данными в начало связанного списка."""
+
         new_node = Node(data_)
 
         new_node.next_node = self.head
@@ -45,7 +47,8 @@ class LinkedList:
         self.all.append(new_node)
 
     def insert_at_end(self, data_: dict) -> None:
-        """Принимает данные (словарь) и добавляет узел с этими данными в конец связанного списка"""
+        """Принимает данные (словарь) и добавляет узел с этими данными в конец связанного списка."""
+
         new_node = Node(data_)
 
         previous = self.all[-1]
@@ -54,7 +57,8 @@ class LinkedList:
         self.all.append(new_node)
 
     def __str__(self) -> str:
-        """Вывод данных односвязного списка в строковом представлении"""
+        """Вывод данных односвязного списка в строковом представлении."""
+
         node = self.head
         if node is None:
             return str(None)
@@ -69,7 +73,8 @@ class LinkedList:
 
     def to_list(self):
         """
-        Возвращает список с данными, содержащимися в односвязном списке `LinkedList`.
+        Возвращает список с данными, содержащимися в односвязном списке LinkedList.
+
         :return: список с данными
         """
         sorted_list = sorted(self.all, key=lambda x: x['id'])
@@ -80,6 +85,7 @@ class LinkedList:
         """
         Возвращает первый найденный в `LinkedList` словарь с ключом 'id',
         значение которого равно переданному в метод значению.
+
         :return: словарь с ключом 'key_'
         """
         for item in self.all:

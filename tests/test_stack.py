@@ -7,13 +7,13 @@ class TestStack(unittest.TestCase):
 
     def test_str(self):
         """
-        Проверяет работу метода __str__
+        Проверяет работу метода __str__.
         """
         self.assertEqual(str(self.stack), "Это экземпляр класса Stack.")
 
     def test_push(self):
         """
-        Проверка функции push() из класса Stack
+        Проверка функции push() из класса Stack.
         """
         self.stack.push('test1')
         self.stack.push('test2')
@@ -25,7 +25,7 @@ class TestStack(unittest.TestCase):
 
     def test_pop(self):
         """
-        Проверка функции pop() из класса Stack
+        Проверка функции pop() из класса Stack.
         """
         self.stack.push('test1')
         self.assertEqual(self.stack.pop(), 'test1')
